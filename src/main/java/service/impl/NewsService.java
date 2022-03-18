@@ -13,14 +13,13 @@ public class NewsService implements INewsService {
     private INewDAO newDao;
 
     @Override
-    public List<NewsModel> findByCategoryId(Long categoryId) {
-        return newDao.findByCategoryId(categoryId);
+    public List<NewsModel> findByCategoryId(Long catId) {
+        return newDao.findByCategoryId(catId);
     }
 
     @Override
     public NewsModel save(NewsModel newsModel) {
         Long newId = newDao.save(newsModel);
-        System.out.println(newId);
-        return null;
+        return newDao.findOne(newId);
     }
 }

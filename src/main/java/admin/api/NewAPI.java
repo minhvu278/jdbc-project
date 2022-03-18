@@ -22,6 +22,8 @@ public class NewAPI extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         NewsModel newsModel = HttpUtil.of(req.getReader()).toModel(NewsModel.class);
+        newsModel = newsService.save(newsModel);
+        System.out.println(newsModel);
     }
 
 //    @Override

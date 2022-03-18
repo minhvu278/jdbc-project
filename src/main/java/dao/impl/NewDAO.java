@@ -9,9 +9,16 @@ import java.util.List;
 public class NewDAO extends AbstractDAO<NewsModel> implements INewDAO {
 
     @Override
-    public List<NewsModel> findByCategoryId(Long categoryId) {
+    public NewsModel findOne(Long id) {
+        String sql = "SELECT * FROM news WHERE id = ?";
+        List<NewsModel> news = query(sql, new NewsMapper(), id);
+        return news.isEmpty() ? null : news.get(0) ;
+    }
+
+    @Override
+    public List<NewsModel> findByCategoryId(Long catId) {
         String sql = "SELECT * FROM news WHERE cat_id = ?";
-        return query(sql, new NewsMapper(), categoryId);
+        return query(sql, new NewsMapper(), catId);
     }
 
     @Override

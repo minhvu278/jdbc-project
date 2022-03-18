@@ -6,9 +6,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class HttpUtil {
+
     private String value;
 
-    public HttpUtil(String value) {
+    public HttpUtil (String value) {
         this.value = value;
     }
 
@@ -21,7 +22,7 @@ public class HttpUtil {
         return null;
     }
 
-    public static HttpUtil of(BufferedReader reader) {
+    public static HttpUtil of (BufferedReader reader) {
         StringBuilder sb = new StringBuilder();
         try {
             String line;
