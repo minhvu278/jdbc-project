@@ -48,9 +48,6 @@ public class AbstractDAO<T> implements GenericDAO<T> {
                 if (statement != null) {
                     statement.close();
                 }
-                if (statement != null) {
-                    statement.close();
-                }
                 if (resultSet != null) {
                     resultSet.close();
                 }
@@ -69,7 +66,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
             Long id = null;
             connection = getConnection();
             connection.setAutoCommit(false);
-            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
             setParameter(statement, parameters);
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
@@ -156,8 +153,8 @@ public class AbstractDAO<T> implements GenericDAO<T> {
                     statement.setTimestamp(index, (Timestamp) parameter);
                 }
             }
-        }catch (SQLException e) {
-           e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

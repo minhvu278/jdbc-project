@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class NewsModel {
     private Long id;
-    private Long catId;
+    private Long categoryId;
     private String title;
     private String thumbnail;
     private String shortDescription;
@@ -20,12 +20,12 @@ public class NewsModel {
         this.id = id;
     }
 
-    public Long getCatId() {
-        return catId;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCatId(Long catId) {
-        this.catId = catId;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getTitle() {

@@ -1,6 +1,7 @@
 package admin.api;
 
 import model.NewsModel;
+import org.codehaus.jackson.map.ObjectMapper;
 import service.INewsService;
 import utils.HttpUtil;
 
@@ -19,11 +20,13 @@ public class NewAPI extends HttpServlet {
     private INewsService newsService;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         NewsModel newsModel = HttpUtil.of(req.getReader()).toModel(NewsModel.class);
         newsModel = newsService.save(newsModel);
-        System.out.println(newsModel);
+
+        mapper.writeValue(resp.getOutputStream(), newsModel);
     }
 
 //    @Override

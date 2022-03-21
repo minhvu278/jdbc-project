@@ -31,7 +31,7 @@ public class HomeController extends HttpServlet {
         NewsModel newsModel = new NewsModel();
         newsModel.setTitle(title);
         newsModel.setContent(content);
-        newsModel.setCatId(categoryId);
+        newsModel.setCategoryId(categoryId);
         newsService.save(newsModel);
 
         req.setAttribute("categories", categoryService.findAll());
