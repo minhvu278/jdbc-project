@@ -23,16 +23,27 @@ public class NewDAO extends AbstractDAO<NewsModel> implements INewDAO {
 
     @Override
     public Long save(NewsModel newsModel) {
-        String sql = "INSERT INTO news(title, content, categoryid) VALUES(?, ?, ?)";
-        return insert(sql, newsModel.getTitle(), newsModel.getContent(), newsModel.getCategoryId());
+        String sql = "INSERT INTO news(title, thumbnail, short_description, created_at, content, categoryid) VALUES(?, ?, ?, ?, ?, ?)";
+//        StringBuilder sql = new StringBuilder("INSERT INTO news(title, content, thumbnail, ");
+//        sql.append("short_description, categoryid, created_at)");
+//        sql.append("VALUES(?, ?, ?, ?, ?, ?)");
+        return insert(sql, newsModel.getTitle(), newsModel.getThumbnail(),
+                newsModel.getShortDescription(), newsModel.getCreatedAt(),
+                newsModel.getContent(), newsModel.getCategoryId());
     }
 
     @Override
     public void update(NewsModel updateNew) {
-        String sql = "UPDATE news SET title = ?, thumbnail = ?," + "short_description = ?, content = ?, categoryid = ?," +
-                "created_at = ?, updated_at = ? WHERE id = ?";
-        update(sql, updateNew.getTitle(), updateNew.getThumbnail(), updateNew.getContent(),
+        StringBuilder sql = new StringBuilder("UPDATE news SET (title = ?, content = ?, thumbnail = ?, )");
+        sql.append("short_description = ?, categoryid = ?, created_at = ?, updated_at = ?");
+        update(sql.toString(), updateNew.getTitle(), updateNew.getThumbnail(), updateNew.getContent(),
                 updateNew.getShortDescription(), updateNew.getCategoryId(), updateNew.getCreatedAt(),
                 updateNew.getUpdatedAt(), updateNew.getId());
+    }
+
+    @Override
+    public void delete(long id) {
+        String sql = "DELETE FROM news WHERE id = ?";
+        update(sql, id);
     }
 }
