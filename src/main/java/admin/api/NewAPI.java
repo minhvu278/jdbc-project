@@ -29,10 +29,16 @@ public class NewAPI extends HttpServlet {
         mapper.writeValue(resp.getOutputStream(), newsModel);
     }
 
-//    @Override
-//    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
-//    }
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("application/json");
+        NewsModel updateNew = HttpUtil.of(req.getReader()).toModel(NewsModel.class);
+        updateNew = newsService.update(updateNew);
+
+        mapper.writeValue(resp.getOutputStream(), updateNew);
+    }
 //
 //    @Override
 //    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

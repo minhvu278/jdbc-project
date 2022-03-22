@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class NewsModel {
     private Long id;
+    private long[] ids;
     private Long categoryId;
     private String title;
     private String thumbnail;
@@ -18,6 +19,14 @@ public class NewsModel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public long[] getIds() {
+        return ids;
+    }
+
+    public void setIds(long[] ids) {
+        this.ids = ids;
     }
 
     public Long getCategoryId() {

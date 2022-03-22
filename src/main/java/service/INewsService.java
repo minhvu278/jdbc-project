@@ -5,6 +5,7 @@ import model.NewsModel;
 import java.util.List;
 
 public interface INewsService {
-    List<NewsModel> findByCategoryId(Long catId);
+    List<NewsModel> findByCategoryId(Long categoryId);
     NewsModel save(NewsModel newsModel);
+    NewsModel update(NewsModel updateNew);
 }

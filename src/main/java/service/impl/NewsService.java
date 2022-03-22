@@ -22,4 +22,13 @@ public class NewsService implements INewsService {
         Long newId = newDao.save(newsModel);
         return newDao.findOne(newId);
     }
+
+    @Override
+    public NewsModel update(NewsModel updateNew) {
+        NewsModel oldNew = newDao.findOne(updateNew.getId());
+        updateNew.setCreatedAt(oldNew.getCreatedAt());
+        updateNew.setUpdatedAt(oldNew.getUpdatedAt());
+        newDao.update(updateNew);
+        return newDao.findOne(updateNew.getId());
+    }
 }
