@@ -40,4 +40,9 @@ public class NewsService implements INewsService {
             newDao.delete(id);
         }
     }
+
+    @Override
+    public List<NewsModel> findAll() {
+        return newDao.findAll();
+    }
 }

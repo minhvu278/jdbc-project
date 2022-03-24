@@ -7,11 +7,11 @@
     </excludes>
 
     <decorator name="admin" page="admin.jsp">
-        <pattern>/admin</pattern>
+        <pattern>/admin*</pattern>
     </decorator>
 
     <decorator name="user" page="user.jsp">
-        <pattern>/home</pattern>
+        <pattern>/home*</pattern>
     </decorator>
 </decorators>
 

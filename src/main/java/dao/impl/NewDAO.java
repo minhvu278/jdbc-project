@@ -46,4 +46,10 @@ public class NewDAO extends AbstractDAO<NewsModel> implements INewDAO {
         String sql = "DELETE FROM news WHERE id = ?";
         update(sql, id);
     }
+
+    @Override
+    public List<NewsModel> findAll() {
+        String sql = "SELECT * FROM news";
+        return query(sql, new NewsMapper());
+    }
 }

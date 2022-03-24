@@ -1,5 +1,7 @@
 package admin;
 
+import constant.SystemConstant;
+import model.NewsModel;
 import service.ICategoryService;
 import service.INewsService;
 
@@ -16,14 +18,13 @@ import java.io.IOException;
 public class NewController extends HttpServlet {
 
     @Inject
-    private ICategoryService categoryService;
-
-    @Inject
     private INewsService newsService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        NewsModel model = new NewsModel();
+        model.setListResult(newsService.findAll());
+        req.setAttribute(SystemConstant.MODEL, model);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/views/admin/new/list.jsp");
         requestDispatcher.forward(req, resp);
     }

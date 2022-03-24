@@ -2,23 +2,12 @@ package model;
 
 import java.sql.Timestamp;
 
-public class UserModel {
-    private Long id;
+public class UserModel extends AbstractModel<UserModel> {
     private String userName;
     private String fullName;
     private String password;
     private int status;
     private Long roleId;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUserName() {
         return userName;
@@ -58,21 +47,5 @@ public class UserModel {
 
     public void setRoleId(Long roleId) {
         this.roleId = roleId;
-    }
-
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
