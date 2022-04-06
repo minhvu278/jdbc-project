@@ -10411,22 +10411,22 @@
 		"bLengthChange": true,
 	
 	
-		/**
-		 * Enable or disable pagination.
-		 *  @type boolean
-		 *  @default true
-		 *
-		 *  @dtopt Features
-		 *  @name DataTable.defaults.paging
-		 *
-		 *  @example
-		 *    $(document).ready( function () {
-		 *      $('#example').dataTable( {
-		 *        "paging": false
-		 *      } );
-		 *    } );
-		 */
-		"bPaginate": true,
+
+		  // Enable or disable pagination.
+		  //  @type boolean
+		  //  @default true
+		  //
+		  //  @dtopt Features
+		  //  @name DataTable.defaults.paging
+
+		   // @example
+		   //   $(document).ready( function () {
+		   //     $('#example').dataTable( {
+		   //       "paging": false,
+		   //     } );
+		   //   } );
+
+		"bPaginate": false,
 	
 	
 		/**

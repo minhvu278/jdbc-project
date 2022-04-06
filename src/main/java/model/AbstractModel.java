@@ -10,6 +10,9 @@ public class AbstractModel<T> {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private List<T> listResult = new ArrayList<>();
+    private int page;
+    private int maxPageItem;
+    private int totalPage;
 
     public Long getId() {
         return id;
@@ -49,5 +52,29 @@ public class AbstractModel<T> {
 
     public void setListResult(List<T> listResult) {
         this.listResult = listResult;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public int getMaxPageItem() {
+        return maxPageItem;
+    }
+
+    public void setMaxPageItem(int maxPageItem) {
+        this.maxPageItem = maxPageItem;
+    }
+
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 }

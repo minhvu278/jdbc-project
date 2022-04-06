@@ -23,11 +23,9 @@
 <body id="page-top">
 
 <%@ include file="/common/admin/header.jsp" %>
-<div>
-    <%@ include file="/common/admin/menu.jsp" %>
+<%--    <%@ include file="/common/admin/menu.jsp" %>--%>
     <dec:body/>
     <%@ include file="/common/admin/footer.jsp" %>
-</div>
 
 <!-- Bootstrap core JavaScript-->
 <script src="<c:url value='/template/admin/vendor/jquery/jquery.min.js'/>"></script>
@@ -46,6 +44,7 @@
 
 <!-- Demo scripts for this page-->
 <script src="<c:url value='/template/admin/js/demo/datatables-demo.js'/>"></script>
+<script src="<c:url value='/template/paging/jquery.twbsPagination.js'/>"></script>
 <%--<script src="<c:url value='/template/admin/js/demo/chart-area-demo.js'/>"></script>--%>
 
 </body>
