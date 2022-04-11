@@ -3,6 +3,7 @@ package dao.impl;
 import dao.INewDAO;
 import mapper.NewsMapper;
 import model.NewsModel;
+import paging.Pageble;
 
 import java.util.List;
 
@@ -48,8 +49,20 @@ public class NewDAO extends AbstractDAO<NewsModel> implements INewDAO {
     }
 
     @Override
-    public List<NewsModel> findAll() {
-        String sql = "SELECT * FROM news";
-        return query(sql, new NewsMapper());
+    public List<NewsModel> findAll(Pageble pageble) {
+        StringBuilder sql = new StringBuilder("SELECT * FROM news");
+        if (pageble.getSorter() != null) {
+            sql.append(" ORDER BY "+pageble.getSorter().getSortName()+ " "+pageble.getSorter().getSortBy()+"");
+        }
+        if (pageble.getOffset() != null && pageble.getLimit() != null) {
+            sql.append(" LIMIT " +pageble.getOffset()+", "+pageble.getLimit()+"");
+        }
+        return query(sql.toString(), new NewsMapper());
+    }
+
+    @Override
+    public int getTotalItem() {
+        String sql = "SELECT count(*) FROM news";
+        return count(sql);
     }
 }

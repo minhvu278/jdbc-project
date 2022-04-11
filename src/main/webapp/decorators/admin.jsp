@@ -13,6 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value='/template/admin/vendor/fontawesome-free/css/all.min.css'/>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
 
     <!-- Page level plugin CSS-->
     <link href="<c:url value='/template/admin/vendor/datatables/dataTables.bootstrap4.css'/>" rel="stylesheet">
@@ -36,16 +37,23 @@
 
 <!-- Page level plugin JavaScript-->
 <%--<script src="<c:url value='/template/admin/vendor/chart.js/Chart.min.js'/>"></script>--%>
-<script src="<c:url value='/template/admin/vendor/datatables/jquery.dataTables.js'/>"></script>
-<script src="<c:url value='/template/admin/vendor/datatables/dataTables.bootstrap4.js'/>"></script>
+<script src="<c:url value='/template/admin/vendor/datatables/jquery.dataTables.js'/>" defer></script>
+<script src="<c:url value='/template/admin/vendor/datatables/dataTables.bootstrap4.js'/>" defer></script>
 
 <!-- Custom scripts for all pages-->
 <script src="<c:url value='/template/admin/js/sb-admin.min.js'/>"></script>
 
 <!-- Demo scripts for this page-->
-<script src="<c:url value='/template/admin/js/demo/datatables-demo.js'/>"></script>
-<script src="<c:url value='/template/paging/jquery.twbsPagination.js'/>"></script>
+<script src="<c:url value='/template/admin/js/demo/datatables-demo.js'/>" defer></script>
 <%--<script src="<c:url value='/template/admin/js/demo/chart-area-demo.js'/>"></script>--%>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<script src="<c:url value='/template/paging/jquery.twbsPagination.js'/>" defer type="text/javascript"></script>
+<%--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>--%>
+<%--<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>--%>
+<%--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--%>
 
 </body>
 </html>

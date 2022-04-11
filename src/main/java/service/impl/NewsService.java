@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.INewDAO;
 import model.NewsModel;
+import paging.Pageble;
 import service.INewsService;
 
 import javax.inject.Inject;
@@ -42,7 +43,12 @@ public class NewsService implements INewsService {
     }
 
     @Override
-    public List<NewsModel> findAll() {
-        return newDao.findAll();
+    public List<NewsModel> findAll(Pageble pageble) {
+        return newDao.findAll(pageble);
+    }
+
+    @Override
+    public int getTotalItem() {
+        return newDao.getTotalItem();
     }
 }

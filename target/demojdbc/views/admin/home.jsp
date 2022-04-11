@@ -32,7 +32,7 @@
                 <span>Charts</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value='/admin-new-list'/>">
+            <a class="nav-link" href="<c:url value='/admin-new?page=1&maxPageItem=2&sortName=title&sortBy=desc'/>">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
         </li>
