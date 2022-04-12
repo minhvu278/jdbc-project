@@ -7,12 +7,14 @@
                 <h2 class="heading-section">NEWS</h2>
             </div>
         </div>
+
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="wrap d-md-flex">
                     <div class="img" style="background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fsieupet.com%2Fnhung-hinh-anh-ve-cac-chu-cho-dang-yeu.html&psig=AOvVaw07VOkEidZ5cswgeHGrOwno&ust=1648198741018000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJCQ7Pew3vYCFQAAAAAdAAAAABAY);">
                     </div>
                     <div class="login-wrap p-4 p-md-5">
+
                         <div class="d-flex">
                             <div class="w-100">
                                 <h3 class="mb-4">Sign In</h3>
@@ -25,6 +27,9 @@
                             </div>
                         </div>
                         <form action="<c:url value='/login'/>" method="post" class="signin-form">
+                            <div class="alert alert-${alert}" role="alert">
+                                ${message}
+                            </div>
                             <div class="form-group mb-3">
                                 <label class="label">Username</label>
                                 <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" required>
