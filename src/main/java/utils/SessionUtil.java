@@ -1,6 +1,5 @@
 package utils;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 public class SessionUtil {

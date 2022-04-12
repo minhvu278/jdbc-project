@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
 
 <section class="ftco-section">
     <div class="container">
@@ -27,11 +27,11 @@
                         <form action="<c:url value='/login'/>" method="post" class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label">Username</label>
-                                <input type="text" class="form-control" placeholder="Username" required>
+                                <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" >Password</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                             </div>
                             <div class="form-group">
                                 <input type="hidden" value="login" name="action">
