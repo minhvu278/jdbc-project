@@ -27,9 +27,11 @@
                             </div>
                         </div>
                         <form action="<c:url value='/login'/>" method="post" class="signin-form">
-                            <div class="alert alert-${alert}" role="alert">
-                                ${message}
-                            </div>
+                            <c:if test="${not empty message}">
+                                <div class="alert alert-${alert}" role="alert">
+                                        ${message}
+                                </div>
+                            </c:if>
                             <div class="form-group mb-3">
                                 <label class="label">Username</label>
                                 <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" required>
